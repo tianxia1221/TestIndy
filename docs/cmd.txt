@@ -1,0 +1,9 @@
+1. 持久化mysql
+root@ubuntu:/workshop/mysql# docker run -ti -d -p 3306:3306 -v /workshop/mysql:/var/lib/mysql --name mysql  mysql
+1544b266d52855ec061f52c77eb71bdcda1a0ce14f2255c847c29ddbf5c94b91
+root@ubuntu:/workshop/mysql#
+
+2. start docker
+# replace 192.168.179.90 with your wifi IP address
+docker build --build-arg pool_ip=10.236.114.233 -f ci/indy-pool.dockerfile -t indy_pool_10.236.114.233.v1.8.3.new .
+docker run -itd -p 10.236.114.233:9701-9708:9701-9708 indy_pool_10.236.114.233.v1.8.3.new

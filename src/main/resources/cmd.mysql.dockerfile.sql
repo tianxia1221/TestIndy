@@ -1,0 +1,1 @@
+docker run -ti -d -p 3306:3306 -v /workshop/mysql:/var/lib/mysql --name mysql  mysql
